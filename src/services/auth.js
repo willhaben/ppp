@@ -1,4 +1,4 @@
-import firebase from "./firebase-init"
+import firebase from "./config"
 
 const provider = new firebase.auth.GoogleAuthProvider();
 

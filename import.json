@@ -1,267 +1,302 @@
 {
-  "cd4282fd-c932-4adc-ad00-2025cd5b853c": {
+  "3254a6b4-7adb-4689-a071-28f48fa0525f": {
     "type": "progress",
     "team": "omg",
     "text": "DA Tasks: Deal Setup, prebid upgrade desktop"
   },
-  "5b1919a1-faf3-4704-ba6c-0bbd6c011673": {
-    "type": "progress",
-    "team": "omg",
-    "text": "Responsive Frontend prototype: vue.js #big6"
-  },
-  "9df50a2d-66d3-49d5-a3f3-ff5c3aa9f268": {
+  "4a70ff65-8fc2-45f4-be5c-d322c5b6e24d": {
     "type": "progress",
     "team": "omg",
     "text": "API - new Attribute for pre-formatted Price"
   },
-  "05b13c46-e0c5-4ade-b842-16b8029d4e73": {
+  "82bfac3b-7484-425f-963e-e0b41dd5be91": {
+    "type": "progress",
+    "team": "omg",
+    "text": "Autocomplete with category suggestions (prototype)"
+  },
+  "d5aff377-d1a1-4f1c-9779-54cba19d75f9": {
+    "type": "progress",
+    "team": "omg",
+    "text": "Recommendations based on similarity search (mweb)"
+  },
+  "1ccceff5-98a3-4e9e-ab15-31ea87fed960": {
     "type": "progress",
     "team": "kitt",
     "text": "fixed realestate AI bugs"
   },
-  "2f3a5225-27ac-44aa-af17-407a0723b67d": {
+  "5363d152-dd96-4dac-9fcf-7890a578171c": {
     "type": "progress",
     "team": "kitt",
-    "text": "re-ran mapping tests for importer and desktop RE-ads"
+    "text": "implemented solution for freetext price and on request for realestate ads"
   },
-  "0606539a-1bfa-4a5b-a58b-5220a354a461": {
+  "c801df95-5ea4-44c2-bded-aaea7839eae1": {
+    "type": "progress",
+    "team": "kitt",
+    "text": "fixed dsf bugs and released dsf features"
+  },
+  "ded889e9-2d73-46ab-a1e0-bce223bc4eaf": {
     "type": "progress",
     "team": "jobs",
-    "text": "SEO for Google JobPostings"
+    "text": "Company statistics bugfix release"
   },
-  "df7cb56c-c0ba-4ae0-b1a9-71548713b706": {
+  "02fe7f92-b579-4a51-9330-4e92663bfdff": {
     "type": "progress",
     "team": "jobs",
-    "text": "SSO: specification #big6"
+    "text": "SSO: specification finalized #big6"
   },
-  "017505e1-9662-4c8d-b041-44365352d0c5": {
+  "dadcfc80-a3f5-434d-960e-f292b2333c02": {
     "type": "progress",
     "team": "jobs",
-    "text": "Apps API: Search implemented, SearchAgents in review"
+    "text": "Apps API: Search &amp; SearchAgents finalized"
   },
-  "d89b05d1-88cb-4bed-8710-297c42449f94": {
-    "type": "progress",
-    "team": "jobs",
-    "text": "Housekeeping: bugfixes"
-  },
-  "bc040c56-8fee-44b5-b01c-3b1f5fa77c43": {
+  "b2402e6b-e5ec-4f87-bd75-265691edb8e0": {
     "type": "progress",
     "team": "safe",
     "text": "Started with Schibsted Data Stream integration #big6"
   },
-  "0ea244e6-144a-4c9e-bbdd-ea88fea27020": {
+  "7f32c5db-2422-48f5-92eb-e361f69d4bb9": {
     "type": "progress",
     "team": "safe",
-    "text": "Improvements on PB integration"
+    "text": "Released Invoicing features"
   },
-  "068a031d-5d42-4cf7-a04f-cffdb1ebb03f": {
+  "27a2a91d-b322-4d93-8d34-ba3f80b81500": {
     "type": "progress",
     "team": "safe",
     "text": "Work on deployment-pipeline-as-code #big6"
   },
-  "8cb22fe1-f32e-4300-8987-6bc8e69a2e3c": {
+  "a45d56bf-66c7-4216-8d19-eaa663a0d1bc": {
     "type": "progress",
     "team": "qa",
     "text": "Released SOLR 4.15"
   },
-  "6cf5dbed-a386-492c-8f4b-34b0e7519955": {
+  "3a959c03-d791-48ac-aee9-42605faf13b2": {
     "type": "progress",
     "team": "qa",
     "text": "Released whiad/mweb 1101"
   },
-  "2661f426-587e-44ac-a26b-b99f4d933860": {
+  "5ffd52cf-da56-4de4-83e6-247b43b2331c": {
     "type": "progress",
     "team": "qa",
     "text": "Released BDS 49"
   },
-  "ad650fcf-e6ad-47eb-98b8-6e778c4ebe26": {
+  "f1514ec1-463f-4a66-bb34-21bb3d6ce3f4": {
     "type": "progress",
     "team": "qa",
     "text": "Testing AZA immo on the Apps - 4.9"
   },
-  "b5f43d19-4c27-4af1-86c3-c3958cbb4263": {
+  "d68b7d42-a91b-443a-ae0e-65258db6ec9f": {
     "type": "progress",
     "team": "ops",
-    "text": "Evaluation of Schibsted YAMS done #big6"
+    "text": "Upgraded all live tomcats to newest version #big6"
   },
-  "53e39058-b6cc-4b3c-9fbf-d42115cccd25": {
+  "6a6f5b68-c80a-44b5-8f68-37450836f17a": {
     "type": "progress",
     "team": "ops",
-    "text": "extended k8s-haproxy-configurator to fullfill our needs + created pull request"
+    "text": "Advanced kubernetes setup for dev"
   },
-  "04b54564-07c5-48e4-976e-c91be49ab748": {
+  "56461b83-fc5f-45aa-96d8-d8ac7578752f": {
+    "type": "progress",
+    "team": "ops",
+    "text": "Haproxy Enterprise Edition setup in DEV finisehd"
+  },
+  "fb41444f-3b69-4e49-b61e-c27057afa22f": {
+    "type": "progress",
+    "team": "ops",
+    "text": "Solved performance Issue, where tomcat would slow down after some time. (JSP memory leak in tomcat)  #big6"
+  },
+  "c318b5c0-66ea-4b0f-bd67-de256ca85bdd": {
     "type": "progress",
     "team": "mad",
-    "text": "Real estate ad insertion: no blockers or critical bugs found so far during tests."
+    "text": "UX: implemented optimizely in iOS app in order to run A/B tests in production."
   },
-  "ec43ba76-290b-41cb-ad4a-1c43e2d2109a": {
+  "f21837b4-54cd-4849-b979-f018d34b9c33": {
     "type": "progress",
     "team": "mad",
-    "text": "App store ratings: the new rating view implemented in iOS app version 4.8.0 is resulting in a massive increase in app ratings."
+    "text": "Jobs API: E-mail search agent is implemented and ready to merge on iOS."
   },
-  "897cfd10-4813-4b92-9476-b1203aae8ace": {
+  "610bddfa-2e48-48e8-aa1b-50557e393dee": {
     "type": "progress",
     "team": "org",
-    "text": "Preparing a presentation about the Willhaben Tech Value Stream"
+    "text": "Working on OKRs for Q3 (on company and on tech level) #big6"
   },
-  "94f8bba1-5964-4ad4-a6fd-b5b549ee5ad6": {
+  "953fe486-00d6-4b45-8e51-b887ce08b15c": {
     "type": "progress",
     "team": "god",
     "text": "Immo Statistics : preparations for June 2018"
   },
-  "8792e3ba-be4b-403b-92ae-aae0c9a9f729": {
+  "b027b3e5-eeb6-4ede-89f9-9796e2efeb5d": {
     "type": "progress",
     "team": "asap",
     "text": "Implementation of Zendesk Data Export #big6"
   },
-  "5a246f98-4881-4f94-a176-9190577db3f2": {
+  "438fceaa-6a76-4808-8d5b-8e515517f8c5": {
     "type": "progress",
     "team": "asap",
-    "text": "Speeded up iAd Unit and Integration Tests, minified iAd installation.properties to two files"
+    "text": "Braze Cleanup Scheduled Job"
   },
-  "d984b5cf-8e2e-4d15-90da-f0908dd68296": {
+  "9c468760-8147-455e-92d3-d36b11198564": {
     "type": "progress",
     "team": "asap",
     "text": "Fixed a lot of messaging bugs"
   },
-  "817bcc4a-5f14-4c2d-ab3c-c7e78da34a2a": {
+  "ebb99429-637d-4d92-b03e-0e3aba692e13": {
     "type": "plans",
     "team": "omg",
     "text": "Responsive Frontend"
   },
-  "9a4b4e95-f91f-4024-be0e-eeb6b47e8b6e": {
+  "5aa40292-5edf-4a01-b9c9-6acb0031a387": {
     "type": "plans",
     "team": "omg",
-    "text": "Matchmaking Tasks"
+    "text": "Recommendations based on similarity search (iad)"
   },
-  "2288a9d8-f722-4a1c-b6b2-73d73474274c": {
+  "4a058e82-7303-48f0-9ba6-23086073cd57": {
     "type": "plans",
     "team": "kitt",
     "text": "continue fixing realestate AI bugs"
   },
-  "de483c57-2bae-4952-80a7-02b6b26fa8db": {
+  "e0c9c494-00bb-4590-93c7-d6857dea60dc": {
     "type": "plans",
     "team": "kitt",
-    "text": "implement solution for freetext price in realestate ads"
+    "text": "release mapping on 27.06."
   },
-  "d2b6e093-ab5b-40ba-a661-0acfcb579ec6": {
+  "24c922e8-5ac3-401e-b085-139c055ec5de": {
+    "type": "plans",
+    "team": "kitt",
+    "text": "impelement event based statistics for dsf"
+  },
+  "048fb5e4-1444-4a6f-a3b8-a19758d23206": {
     "type": "plans",
     "team": "jobs",
-    "text": "Apps API: searchagent context-link, search entry point"
+    "text": "Apps API: search entry point"
   },
-  "aeb66542-5b7d-4dd7-8b3d-60259ecdf4de": {
+  "29c373e3-d3d8-4f4f-8212-1b904f80d40a": {
     "type": "plans",
     "team": "jobs",
-    "text": "GDPR: account cleanup, hint for anonymous applicants #big6"
+    "text": "GDPR: account cleanup, hint for anonymous applicants"
   },
-  "607d8715-512d-49c4-9c61-6a6c4efbee5c": {
+  "e1b9eb70-4c71-4d3f-9ce2-48a309f4ad7e": {
     "type": "plans",
     "team": "jobs",
     "text": "HotJar reactivation"
   },
-  "2eab8cf5-0cce-4e19-93ab-e5867a6bc884": {
+  "4e904715-e4ef-4b46-966b-f0a42076aeda": {
     "type": "plans",
     "team": "safe",
     "text": "Continue with Schibsted Data Stream integration"
   },
-  "c8b2127a-8d6e-4b0f-9ef3-dd705214d310": {
+  "d816f035-7ec8-4c27-8968-6dc8bbb54afd": {
     "type": "plans",
     "team": "safe",
     "text": "Work on deployment-pipeline-as-code"
   },
-  "bc6cc2ee-8f2b-4d9a-ac2b-16a451c6491b": {
+  "263990f0-14b9-47bd-a0f3-e8cb14d218fa": {
     "type": "plans",
     "team": "qa",
     "text": "Release WHIAD/MWEB 1102"
   },
-  "929de937-24e6-4e78-b7e6-208e7dc348c8": {
+  "1b529673-249a-41fe-8e80-9711ab3b79c8": {
     "type": "plans",
     "team": "qa",
     "text": "AZA immo tests"
   },
-  "34a9a827-c8f9-41f5-84d3-3f15038379a9": {
+  "047ac3a7-d7d3-489d-8649-1b30b8187463": {
     "type": "plans",
     "team": "qa",
     "text": "Release DSF 25 (new values for motorcycle and caravan ad insertion)"
   },
-  "5a275b8e-c372-4e45-8973-156e7bbe15a4": {
+  "52a68148-9c39-4f6a-a3ae-95d43c8d8753": {
     "type": "plans",
     "team": "ops",
     "text": "Preparations for k8s prod setup"
   },
-  "edb84db5-799b-4c30-96e6-8b3b502b31e7": {
+  "a8607d4e-6320-4daa-976f-60cc47b2d81f": {
     "type": "plans",
     "team": "ops",
-    "text": "implement schibsted confluence for willhaben #big6"
+    "text": "Go live with HAPEE #big6"
   },
-  "909bddba-91b2-49c6-996b-4cc19cbd9c96": {
+  "a8db2368-3d3d-4808-805e-082027f95297": {
     "type": "plans",
     "team": "mad",
-    "text": "Releases: app versions 4.9.0 containing the real estate ad insertion implementations have a feature complete date set for June 20th."
+    "text": "Releases: app versions 4.9.0 containing the real estate ad insertion implementations have a release date set for July 11th."
   },
-  "644ba273-f7d2-48c3-97c3-4c9f507d4227": {
+  "fae4be85-bfea-49e6-92a9-91dfe33bea08": {
     "type": "plans",
     "team": "org",
     "text": "Planning the first DevOps guild round #big6"
   },
-  "b5353648-993f-4645-850e-b8fa826b4647": {
+  "82805dec-40b1-4087-ac8f-86ea4002512e": {
     "type": "plans",
     "team": "god",
     "text": "Immo Statistics: analysis May + check the number of ads difering the state"
   },
-  "311464ed-506d-43f6-b9d2-57825cd98224": {
+  "16f69f19-27d8-495a-af2d-a1e0af154a9e": {
     "type": "plans",
     "team": "asap",
     "text": "Extract all given consents from iAd and job database for migration"
   },
-  "29526f09-07ff-4414-90dd-de29335c0582": {
+  "1011901b-99d5-487f-b154-508cc42e34b6": {
     "type": "plans",
     "team": "asap",
-    "text": "LBMP API Facade + Caching #big6"
+    "text": "LBMP API Facade #big6"
   },
-  "f2b1d6ba-85dd-4bbe-9e0f-814e69611db5": {
+  "502321e7-ecdb-44e0-a424-f03b299fecfd": {
     "type": "plans",
     "team": "asap",
     "text": "MCP-Release"
   },
-  "54029e79-2762-4a78-88ae-9084f0910195": {
+  "68eba2cd-4acb-4ded-be63-00d9ee2a0d2d": {
     "type": "problems",
     "team": "jobs",
-    "data": "lack of testers for release"
+    "text": "lack of testers for release"
   },
-  "c58e7450-6222-46c0-b6d6-c2fed643d158": {
+  "52339f50-3ba5-4a0c-b85d-8354944a8397": {
     "type": "problems",
-    "team": "safe",
-    "data": "Infra issues with ZooKeeper #big6"
+    "team": "jobs",
+    "text": "HotJar causes page load delays"
   },
-  "13a7f416-b1e9-4e53-a343-62e64b8cdc35": {
+  "413aa593-615a-4d74-bc40-56df1e162c75": {
     "type": "problems",
     "team": "ops",
-    "data": "iad desktop + api servers kicked out of loadbalancer pool because of performance + load issues from time to time #big6"
+    "text": "iad desktop + api servers kicked out of loadbalancer pool because of garbage collections #big6"
   },
-  "39693b34-dda0-4984-bd71-0bc5c4f777d0": {
+  "504fb7ad-2c49-4168-a77f-90f5286b820d": {
+    "type": "problems",
+    "team": "mad",
+    "text": "Releases: feature complete date for app versions 4.9.0 containing the real estate ad insertion implementations was moved to June 29th."
+  },
+  "55fe3168-65d1-4fa4-b5e8-52f79915475c": {
     "type": "problems",
     "team": "god",
-    "data": "Lack of a long term view"
+    "text": "Lack of a long term view"
   },
-  "b5f41647-24aa-4bd1-ac70-64738fb3d470": {
+  "7edcf3c9-325b-499c-b0b6-de8bbcde2ae0": {
+    "type": "problems",
+    "team": "asap",
+    "text": "Still to find out which data we need for migration"
+  },
+  "e87eba69-bc06-452d-9fea-457936b96721": {
     "type": "deadlines",
     "team": "kitt",
-    "data": "be release ready with realestate project until 22.06.2018"
+    "text": "release mapping on 27.06."
   },
-  "2fe7178c-54f7-42e7-9531-4c342c46fbc6": {
+  "86f5ff9d-aa7f-4621-b3b2-b99ced1d2fda": {
+    "type": "deadlines",
+    "team": "kitt",
+    "text": "release mweb and api 4.7."
+  },
+  "c82f34f9-ca05-4740-9e33-6fb4a8061235": {
     "type": "deadlines",
     "team": "mad",
-    "data": "June 20th 2018: feature complete for app versions 4.9.0 containing the real estate ad insertion implementations."
+    "text": "June 29th 2018: feature complete for app versions 4.9.0 containing the real estate ad insertion implementations."
   },
-  "b2471516-5f5d-46ec-b048-888522c8c6a7": {
+  "0d1d1258-dbc8-464b-b068-8c0d00bbad1b": {
     "type": "deadlines",
     "team": "mad",
-    "data": "June 2018: release of app versions 4.9.0 containing the real estate ad insertion implementations."
+    "text": "July 11th 2018: release of app versions 4.9.0 containing the real estate ad insertion implementations."
   },
-  "661a9a8d-dd2c-426a-ab1c-ba7f9bc9c911": {
+  "8e64d04e-3657-4751-a2a3-c06597e30a51": {
     "type": "deadlines",
     "team": "asap",
-    "data": "."
+    "text": "."
   }
 }
