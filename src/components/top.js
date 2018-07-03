@@ -43,9 +43,16 @@ let Top = (props) => (<AppBar position="static" color="default">
           </Select>
 
         </FormControl>
+        }
+        {props.weeks.length > 0 &&
+        <FormControl className={props.classes.formControl}>
+          <InputLabel htmlFor="team-select">Team</InputLabel>
+          <Select native={true}
+                  inputProps={{id: 'team-select', name: 'team-select'}}>
 
+          </Select>
 
-
+        </FormControl>
         }
 
       </div>
