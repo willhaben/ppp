@@ -1,14 +1,12 @@
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import AccountCircle from '@material-ui/icons/AccountCircle'
 import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import { withStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-import AddIcon from '@material-ui/icons/Add'
 import moment from 'moment'
+import { withActions } from '../context/ppp';
 
 const styles = {
   title: {
@@ -35,7 +33,7 @@ let Top = (props) => (<AppBar position="static" color="default">
         {props.weeks.length > 0 &&
         <FormControl className={props.classes.formControl}>
           <InputLabel htmlFor="week-select">Week</InputLabel>
-          <Select native={true} onChange={(e) => props.onWeekSelected(e.target.value)}
+          <Select native={true} onChange={(e) => props.actions.selectWeek(e.target.value)}
                   inputProps={{id: 'week-select', name: 'week-select'}}>
             {props.weeks.map(w => (
               <option key={w} value={w}>{moment(w,'yyyy-ww').format("ww/YYYY")}</option>
@@ -44,12 +42,15 @@ let Top = (props) => (<AppBar position="static" color="default">
 
         </FormControl>
         }
-        {props.weeks.length > 0 &&
+        {props.teams.length > 0 &&
         <FormControl className={props.classes.formControl}>
           <InputLabel htmlFor="team-select">Team</InputLabel>
-          <Select native={true}
+          <Select native={true} onChange={(e) => props.actions.selectTeam(e.target.value!=-1?e.target.value:null)}
                   inputProps={{id: 'team-select', name: 'team-select'}}>
-
+            <option key="all" value={-1}>All</option>
+            {props.teams.map(w => (
+              <option key={w} value={w}>{w}</option>
+            ))}
           </Select>
 
         </FormControl>
@@ -60,4 +61,4 @@ let Top = (props) => (<AppBar position="static" color="default">
   </AppBar>
 )
 
-export default withStyles(styles)(Top)
+export default withActions(withStyles(styles)(Top))

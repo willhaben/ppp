@@ -2,79 +2,85 @@ import * as Auth from '../src/services/auth'
 import * as Database from '../src/services/database'
 import Top from '../src/components/top'
 import Group from '../src/components/group'
-const uuidv1 = require('uuid/v1');
+import Actions from '../src/context/ppp'
+import Login from '../src/components/login'
+
+const uuidv1 = require('uuid/v1')
 
 class Main extends React.Component {
 
   constructor (props) {
     super(props)
     this.state = {}
-    this.state.loggedIn = false
     this.state.weeks = []
     this.state.selectedWeek = null
+    this.state.selectedTeam = null
     this.state.selectedItems = {}
-
-    this.signIn = this.signIn.bind(this)
-    this.newItem = this.newItem.bind(this)
-    this.selectWeek = this.selectWeek.bind(this)
-    this.updateItem = this.updateItem.bind(this)
-    this.getItems = this.getItems.bind(this)
-    Auth.onLogin(user => {
-      this.setState({loggedIn: true})
-      Database.getWeekList().then((w) => {
-        this.setState({weeks: w})
-        this.selectWeek(w[0])
-      })
-    })
-
   }
 
-  selectWeek (week) {
+  selectWeek =  (week) => {
     this.setState({selectedWeek: week})
     Database.getWeek(week).then(items => this.setState({selectedItems: items}))
   }
 
-  signIn () {
-    Auth.signInWithPopup().then(() => this.setState({loggedIn: true}))
+  selectTeam =  (team) => {
+    this.setState({selectedTeam: team})
   }
 
-  newItem (type) {
+  
+
+  getTeams =  () => {
+    return Object.keys(this.state.selectedItems).map((key) => {
+      return this.state.selectedItems[key].team
+    }).filter((elem, pos, arr) => {
+      return arr.indexOf(elem) == pos
+    })
+
+  }
+
+  newItem  = (type) => {
     let items = this.state.selectedItems
     let item = {
       type: type,
-      team: '',
+      team: this.state.selectedTeam,
       text: ''
     }
     items[uuidv1()] = item
     this.setState({selectedItems: items})
   }
 
-  updateItem (key, item) {
+  updateItem = (key, item) => {
     let newItems = this.state.selectedItems
     newItems[key] = item
     this.setState({selectedItems: newItems})
     return Promise.resolve()
   }
-
-  getItems (type) {
-    let currentWeek = this.state.selectedWeek
-    let updateItems = this.updateItem
-    return Object.keys(this.state.selectedItems).map((key, index) => {
-      let onSave = (item) => {
-        return Database.saveItem(currentWeek, key, item).then(() => updateItems(key, item))
-      }
-      return {
-        key: key,
-        data: this.state.selectedItems[key],
-        onSave: onSave
-      }
-    }).filter(i => i.data.type === type).sort((a, b) => a.data.team.localeCompare(b.data.team))
+  
+  onSave = (key, item) => {
+    let updateItem = this.updateItem
+    return Database.saveItem(this.state.selectedWeek, key, item).then(() => updateItem(key, item))
   }
 
+  getItems   = (type) => {
+    let currentTeam = this.state.selectedTeam
+    return Object.keys(this.state.selectedItems).map((key, index) => {
+      return {
+        key: key,
+        data: this.state.selectedItems[key]
+      }
+    }).filter(i => i.data.type === type)
+      .filter(i => currentTeam === null || i.data.team == null || i.data.team === currentTeam)
+      .sort((a, b) => a.data.team && b.data.team ? a.data.team.localeCompare(b.data.team): -1)
+  }
+
+  actions = { newItem: this.newItem, onSave: this.onSave, 
+    selectTeam: this.selectTeam, selectWeek: this.selectWeek  
+  };
+
   render () {
-    return <div>
-      {this.state.loggedIn && <div>
-        <Top weeks={this.state.weeks} onWeekSelected={this.selectWeek}/>
+    return <Actions.Provider value={this.actions}>
+     <Login>
+        <Top weeks={this.state.weeks} teams={this.getTeams()}/>
         <div style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -82,17 +88,17 @@ class Main extends React.Component {
           width: '100%',
           flexWrap: 'wrap'
         }}>
-          <Group heading="Progress" items={this.getItems('progress')} onNewItem={()=>this.newItem('progress')}/>
-          <Group heading="Plans" items={this.getItems('plans')}/>
-          <Group heading="Problems" items={this.getItems('problems')}/>
-          <Group heading="Deadlines" items={this.getItems('deadlines')}/>
+          <Group heading="Progress" type='progress' items={this.getItems('progress')} />
+          <Group heading="Plans" type='plans' items={this.getItems('plans')} />
+          <Group heading="Problems" type='problems' items={this.getItems('problems')} />
+          <Group heading="Deadlines" type='deadlines' items={this.getItems('deadlines')} />
         </div>
-
-      </div>}
-      {!this.state.loggedIn && <div><a onClick={this.signIn}> click to sign in</a></div>}
-    </div>
+      </Login>
+    </Actions.Provider>
   }
 
+
+  
 }
 
 export default Main
