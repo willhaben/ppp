@@ -16,6 +16,13 @@ class Main extends React.Component {
     this.state.selectedWeek = null
     this.state.selectedTeam = null
     this.state.selectedItems = {}
+    Auth.onLogin(user => {
+      this.setState({loggedIn: true})
+      Database.getWeekList().then((w) => {
+        this.setState({weeks: w})
+        this.selectWeek(w[0])
+      })
+    })
   }
 
   selectWeek =  (week) => {
@@ -26,8 +33,6 @@ class Main extends React.Component {
   selectTeam =  (team) => {
     this.setState({selectedTeam: team})
   }
-
-  
 
   getTeams =  () => {
     return Object.keys(this.state.selectedItems).map((key) => {
@@ -78,8 +83,8 @@ class Main extends React.Component {
   };
 
   render () {
-    return <Actions.Provider value={this.actions}>
-     <Login>
+    return <Login>
+       <Actions.Provider value={this.actions}>
         <Top weeks={this.state.weeks} teams={this.getTeams()}/>
         <div style={{
           display: 'flex',
@@ -93,8 +98,9 @@ class Main extends React.Component {
           <Group heading="Problems" type='problems' items={this.getItems('problems')} />
           <Group heading="Deadlines" type='deadlines' items={this.getItems('deadlines')} />
         </div>
+        </Actions.Provider>
       </Login>
-    </Actions.Provider>
+  
   }
 
 
