@@ -14,8 +14,8 @@ let Group = (props) => (
       <AddIcon/>
     </Button>
     <List dense={true}>
-      {props.items.map(i =>
-        <Item item={i} />
+      {props.items.map(item =>
+        <Item item={item} key={item.key} />
       )}
     </List>
   </CardContent></Card>
