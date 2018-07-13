@@ -1,19 +1,23 @@
 import * as Auth from '../services/auth'
+import {withActions} from '../context/ppp'
 
-export default class Login extends React.Component {
+class Login extends React.Component {
 
     constructor (props) {
         super(props)
         this.state = {}
         this.state.loggedIn = false
 
-        Auth.onLogin(user => {
-            this.setState({loggedIn: true})
-          })
+        Auth.onLogin(this.onLoggedIn)
+    }
+
+    onLoggedIn = () => {
+        this.setState({loggedIn: true})
+        this.props.actions.onLoggedIn()
     }
 
     signIn =  () => {
-        Auth.signInWithPopup().then(() => this.setState({loggedIn: true}))
+        Auth.signInWithPopup().then(this.onLoggedIn)
       }
 
     render() {
@@ -25,3 +29,5 @@ export default class Login extends React.Component {
         
     }
 }
+
+export default withActions(Login)

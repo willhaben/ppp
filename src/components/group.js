@@ -10,7 +10,7 @@ import {withActions} from '../context/ppp'
 let Group = (props) => (
   <Card style={{position:'relative', flex: 1, minWidth: 300, margin: 10}}><CardContent>
     <Typography variant="title">{props.heading}</Typography>
-    <Button onClick={() => props.actions.newItem(props.type)} style={{position:'absolute', right: 10, top: 10}} variant="fab" color="secondary" mini="true">
+    <Button onClick={() => props.actions.newItem(props.type)} style={{position:'absolute', right: 10, top: 10}} variant="fab" color="secondary" >
       <AddIcon/>
     </Button>
     <List dense={true}>
