@@ -8,7 +8,9 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "deploy": "firebase deploy"
+    "predeploy": "npm run build && npm run export",
+    "deploy": "firebase deploy",
+    "format": "prettier --write ./src/**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,7 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "firebase-tools": "^3.19.1"
+    "firebase-tools": "^3.19.1",
+    "prettier": "1.13.7"
   }
 }
