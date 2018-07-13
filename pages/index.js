@@ -39,7 +39,7 @@ class Main extends React.Component {
         data: this.props.data.selectedItems[key]
       }
     }).filter(i => i.data.type === type)
-      .filter(i => currentTeam === null || i.data.team == null || i.data.team === currentTeam)
+      .filter(i => currentTeam === undefined || i.data.team == null || i.data.team === currentTeam)
       .sort(currentTeam == null ? sortItems : sortItemsWithTeam)
   }
 

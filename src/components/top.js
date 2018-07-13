@@ -6,7 +6,7 @@ import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import { withStyles } from '@material-ui/core/styles'
 import moment from 'moment'
-import { withActions } from '../context/ppp';
+import { withActions, withData } from '../context/ppp';
 
 const styles = {
   title: {
@@ -23,6 +23,12 @@ const styles = {
   }
 }
 
+let _currentWeek = moment().format("YYYY-ww")
+
+let _hasCurrentWeek=(weeks) => {
+  weeks.find(w => w === _currentWeek)
+}
+
 let Top = (props) => (<AppBar position="static" color="default">
     <Toolbar>
       <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%'}}>
@@ -33,8 +39,9 @@ let Top = (props) => (<AppBar position="static" color="default">
         {props.weeks.length > 0 &&
         <FormControl className={props.classes.formControl}>
           <InputLabel htmlFor="week-select">Week</InputLabel>
-          <Select native={true} onChange={(e) => props.actions.selectWeek(e.target.value)}
+          <Select value={props.data.selectedWeek} native={true} onChange={(e) => props.actions.selectWeek(e.target.value)}
                   inputProps={{id: 'week-select', name: 'week-select'}}>
+            { !_hasCurrentWeek(props.weeks) && <option key={_currentWeek} value={_currentWeek}>{moment().format("ww/YYYY")}</option> }
             {props.weeks.map(w => (
               <option key={w} value={w}>{moment(w,'yyyy-ww').format("ww/YYYY")}</option>
             ))}
@@ -45,7 +52,7 @@ let Top = (props) => (<AppBar position="static" color="default">
         {props.teams.length > 0 &&
         <FormControl className={props.classes.formControl}>
           <InputLabel htmlFor="team-select">Team</InputLabel>
-          <Select native={true} onChange={(e) => props.actions.selectTeam(e.target.value!=-1?e.target.value:null)}
+          <Select  value={props.data.selectedTeam} native={true} onChange={(e) => props.actions.selectTeam(e.target.value!=-1?e.target.value:undefined)}
                   inputProps={{id: 'team-select', name: 'team-select'}}>
             <option key="all" value={-1}>All</option>
             {props.teams.map(w => (
@@ -61,4 +68,4 @@ let Top = (props) => (<AppBar position="static" color="default">
   </AppBar>
 )
 
-export default withActions(withStyles(styles)(Top))
+export default withData(withActions(withStyles(styles)(Top)))

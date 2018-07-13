@@ -11,8 +11,8 @@ class State extends React.Component {
         super(props)
         this.state = {}
         this.state.weeks = []
-        this.state.selectedWeek = null
-        this.state.selectedTeam = null
+        this.state.selectedWeek = undefined
+        this.state.selectedTeam = undefined
         this.state.selectedItems = {}
 
     }
