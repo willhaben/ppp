@@ -3,14 +3,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
-import { debounce } from 'underscore'
+import {debounce} from 'underscore'
 import {withActions, withData} from '../context/ppp';
 
-class Item extends React.Component {
+export class Item extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
-        this.state.edit = false;
         this.state.team = props.item.data.team;
         this.state.text = props.item.data.text;
     }
@@ -19,7 +18,6 @@ class Item extends React.Component {
     onChange = (e) => {
         let state = {};
         state[e.target.name] = e.target.value;
-
         this.setState(state, this.onSave)
     }
 
@@ -31,13 +29,8 @@ class Item extends React.Component {
             order: this.props.item.data.order
         };
         this.props.actions
-            .onSave(this.props.item.key, item)
-            .then(() => this.setState({edit: false}));
-    },300)
-
-    toggleEdit = () => {
-        this.setState({edit: !this.state.edit});
-    }
+            .onSave(this.props.item.key, item);
+    }, 300)
 
     onDelete = () => {
         this.props.actions.deleteItem(this.props.item.key)
@@ -53,22 +46,22 @@ class Item extends React.Component {
                 )}
                 {this.props.data.editMode && (
 
-                        <TextField fullWidth={true}
-                            name="text"
-                            defaultValue={this.props.item.data.text}
-                            onChange={this.onChange}
-                        />
-                   
+                    <TextField fullWidth={true}
+                               name="text"
+                               defaultValue={this.props.item.data.text}
+                               onChange={this.onChange}
+                    />
+
                 )}
 
                 {this.props.data.editMode &&
 
-                    <IconButton size="small" onClick={this.onDelete}>
-                        <SvgIcon>
-                            <path fill="#000000"
-                                  d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
-                        </SvgIcon>
-                    </IconButton>
+                <IconButton size="small" onClick={this.onDelete}>
+                    <SvgIcon>
+                        <path fill="#000000"
+                              d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z"/>
+                    </SvgIcon>
+                </IconButton>
 
                 }
 
