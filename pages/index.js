@@ -10,7 +10,7 @@ class Main extends React.Component {
         super(props)
     }
 
-    TEAMS = [ 'asap', 'kitt']
+    TEAMS = ['omg','kitt','jobs','safe','qa','ops','mad','org','god','asap']
 
     getTeams = () => {
         return Object.keys(this.props.data.selectedItems).map((key) => {
@@ -24,15 +24,14 @@ class Main extends React.Component {
 
     getItems = (type) => {
         let currentTeam = this.props.data.selectedTeam
+        let currentTag = this.props.data.selectedTag
 
         let sortItems = (a, b) => {
             return a.data.team && b.data.team ? a.data.team.localeCompare(b.data.team) : -1
         }
 
         let sortItemsWithTeam = (a, b) => {
-            if (a.data.text == null || a.data.text === '') return -1
-            if (b.data.text == null || b.data.text === '') return 1
-            return a.data.text.localeCompare(b.data.text)
+            return a.data.order - b.data.order
         }
 
         return Object.keys(this.props.data.selectedItems).map((key, index) => {
@@ -42,7 +41,8 @@ class Main extends React.Component {
             }
         }).filter(i => i.data.type === type)
             .filter(i => currentTeam === undefined || i.data.team == null || i.data.team === currentTeam)
-            .sort(currentTeam == null ? sortItems : sortItemsWithTeam)
+            .filter(i => currentTag === undefined || i.data.text === undefined ||i.data.text === '' || i.data.text.includes(currentTag))
+            .sort(currentTeam === undefined ? sortItems : sortItemsWithTeam)
     }
 
 
@@ -53,7 +53,7 @@ class Main extends React.Component {
             <meta charSet="utf-8"/>
         </Head>
             <Login>
-            <Top weeks={this.props.data.weeks} teams={this.TEAMS}/>
+            <Top weeks={this.props.data.weeks} teams={this.TEAMS} tags={['#sch']}/>
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',

@@ -27,7 +27,8 @@ class Item extends React.Component {
         let item = {
             team: this.state.team,
             text: this.state.text,
-            type: this.props.item.data.type
+            type: this.props.item.data.type,
+            order: this.props.item.data.order
         };
         this.props.actions
             .onSave(this.props.item.key, item)

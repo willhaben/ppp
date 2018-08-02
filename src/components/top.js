@@ -45,7 +45,7 @@ let Top = props => (
           willhaben ppps
         </Typography>
 
-        {props.weeks.length > 0 && (
+
           <FormControl className={props.classes.formControl}>
             <InputLabel htmlFor="week-select">Week</InputLabel>
             <Select
@@ -66,8 +66,8 @@ let Top = props => (
               ))}
             </Select>
           </FormControl>
-        )}
-        {props.teams.length > 0 && (
+
+
           <FormControl className={props.classes.formControl}>
             <InputLabel htmlFor="team-select">Team</InputLabel>
             <Select
@@ -91,7 +91,29 @@ let Top = props => (
             </Select>
           </FormControl>
 
-        )}
+          <FormControl className={props.classes.formControl}>
+              <InputLabel htmlFor="team-select">Tags</InputLabel>
+              <Select
+                  value={props.data.selectedTag}
+                  native={true}
+                  onChange={e =>
+                      props.actions.selectTag(
+                          e.target.value !== '-1' ? e.target.value : undefined
+                      )
+                  }
+                  inputProps={{ id: "team-select", name: "team-select" }}
+              >
+                  <option key="all" value={-1}>
+                      All
+                  </option>
+                  {props.tags.map(w => (
+                      <option key={w} value={w}>
+                          {w}
+                      </option>
+                  ))}
+              </Select>
+          </FormControl>
+
           <Switch checked={props.data.editMode} disabled={props.data.teamSelected !== undefined} onChange={props.actions.toggleEdit}/>
       </div>
     </Toolbar>

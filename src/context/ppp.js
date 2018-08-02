@@ -1,6 +1,8 @@
 const uuidv1 = require('uuid/v1');
 import * as Database from '../services/database';
 
+import moment from 'moment'
+
 const Actions = React.createContext({});
 const Data = React.createContext({});
 
@@ -11,6 +13,7 @@ class State extends React.Component {
         this.state.weeks = [];
         this.state.selectedWeek = undefined;
         this.state.selectedTeam = undefined;
+        this.state.selectedTag = undefined;
         this.state.editMode = false;
         this.state.selectedItems = {};
     }
@@ -23,7 +26,8 @@ class State extends React.Component {
             selectWeek: this.selectWeek,
             onLoggedIn: this.onLoggedIn,
             deleteItem: this.deleteItem,
-            toggleEdit: this.toggleEdit
+            toggleEdit: this.toggleEdit,
+            selectTag: this.selectTag
         };
     };
 
@@ -62,12 +66,17 @@ class State extends React.Component {
         this.setState({selectedTeam: team, editMode: editMode});
     };
 
+    selectTag = tag => {
+        this.setState({selectedTag: tag});
+    };
+
     newItem = type => {
         let items = this.state.selectedItems;
         let item = {
             type: type,
             team: this.state.selectedTeam,
-            text: ''
+            text: '',
+            order: moment().valueOf()
         };
         items[uuidv1()] = item;
         this.setState({selectedItems: items});
