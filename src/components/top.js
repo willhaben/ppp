@@ -5,6 +5,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import { withStyles } from "@material-ui/core/styles";
+import Switch from '@material-ui/core/Switch';
 import moment from "moment";
 import { withActions, withData } from "../context/ppp";
 
@@ -74,7 +75,7 @@ let Top = props => (
               native={true}
               onChange={e =>
                 props.actions.selectTeam(
-                  e.target.value != -1 ? e.target.value : undefined
+                  e.target.value !== '-1' ? e.target.value : undefined
                 )
               }
               inputProps={{ id: "team-select", name: "team-select" }}
@@ -89,7 +90,9 @@ let Top = props => (
               ))}
             </Select>
           </FormControl>
+
         )}
+          <Switch checked={props.data.editMode} disabled={props.data.teamSelected !== undefined} onChange={props.actions.toggleEdit}/>
       </div>
     </Toolbar>
   </AppBar>

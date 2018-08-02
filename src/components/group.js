@@ -5,20 +5,20 @@ import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import Item from "./item";
-import { withActions } from "../context/ppp";
+import {withActions, withData} from '../context/ppp';
 
 let Group = props => (
   <Card style={{ position: "relative", flex: 1, minWidth: 300, margin: 10 }}>
     <CardContent>
       <Typography variant="title">{props.heading}</Typography>
-      <Button
+        { props.data.editMode && <Button
         onClick={() => props.actions.newItem(props.type)}
         style={{ position: "absolute", right: 10, top: 10 }}
         variant="fab"
         color="secondary"
       >
         <AddIcon />
-      </Button>
+      </Button> }
       <List dense={true}>
         {props.items.map(item => <Item item={item} key={item.key} />)}
       </List>
@@ -26,4 +26,4 @@ let Group = props => (
   </Card>
 );
 
-export default withActions(Group);
+export default  withData(withActions(Group));
