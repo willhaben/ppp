@@ -5,17 +5,19 @@ import Switch from '@material-ui/core/Switch'
 import SelectWeek from './select-week'
 import SelectTeam from './select-team'
 import SelectTag from './select-tag'
+import UserInfo from './user-info'
 import Grid from '@material-ui/core/Grid'
 import { withActions, withData } from '../context/ppp'
 
 let Top = props => (
   <AppBar position="static" color="default">
     <Toolbar>
-      <Grid container spacing={2}>
-        <Grid item xs={4}>
+      <Grid container spacing={8}>
+        <Grid item xs={5}>
           <Typography variant="title">
             willhaben ppps
           </Typography>
+          <UserInfo/>
         </Grid>
 
         <Grid item xs={2}>
@@ -31,7 +33,10 @@ let Top = props => (
         <Grid item xs={1}>
           <Switch checked={props.data.editMode} disabled={props.data.teamSelected !== undefined}
                   onChange={props.actions.toggleEdit}/>
+
         </Grid>
+
+
       </Grid>
     </Toolbar>
   </AppBar>

@@ -1,39 +1,33 @@
-import firebase from "./config";
+import firebase from './config'
 
-const provider = new firebase.auth.GoogleAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider()
 
-export function onLogin(cb) {
-  firebase.auth().onAuthStateChanged(function(user) {
+export function onLogin (cb, fail) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      cb(user);
+      if (user.email.includes('@schibsted.com')) {
+        cb(user)
+      } else {
+        fail()
+      }
+
     }
-  });
+  })
 }
 
-export function signInWithPopup() {
+export function onLogout () {
+  return firebase.auth().signOut()
+}
+
+export function signInWithPopup () {
   return firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function(result) {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
-      // The signed-in user info.
-      var user = result.user;
-      console.log(result);
-      // ...
+    .catch(function (error) {
+      console.log(error)
     })
-    .catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      console.log(result);
-    });
 }
 
-export function isLoggedIn() {
-  return firebase.auth().currentUser !== null;
+export function isLoggedIn () {
+  return firebase.auth().currentUser !== null
 }
