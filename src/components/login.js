@@ -1,35 +1,35 @@
-import * as Auth from "../services/auth";
-import { withActions } from "../context/ppp";
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import Typography from '@material-ui/core/Typography'
+import { withActions, withData } from '../context/ppp'
+import Button from '@material-ui/core/Button'
+import SecurityIcon from '@material-ui/icons/Security'
 
-class Login extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-        this.state.loggedIn = false;
+let Login = props =>
+  <Grid container justify="center" >
+    <Grid item xs={6}>
+      <Paper style={{padding: 20}}>
+        <Grid container spacing={16}>
+          <Grid item>
+            <Typography variant="headline">
+              Log in to continue
+            </Typography>
+            <Typography variant="body1">
+              you need a schibsted.com gmail account.
+            </Typography>
+          </Grid>
+          <Grid item>
+            {props.data.loginError && <Typography variant="body1">
+              There was an error when logging in.
+            </Typography>}
+            <Button variant="contained" color="secondary" onClick={props.actions.login}>
+              Login
+              <SecurityIcon />
+            </Button>
+          </Grid>
+        </Grid>
+      </Paper>
+    </Grid>
+  </Grid>
 
-        Auth.onLogin(this.onLoggedIn);
-    }
-
-    onLoggedIn = () => {
-        this.setState({ loggedIn: true });
-        this.props.actions.onLoggedIn();
-    };
-
-    signIn = () => {
-        Auth.signInWithPopup().then(this.onLoggedIn);
-    };
-
-    render() {
-        if (this.state.loggedIn) {
-            return <div>{this.props.children}</div>;
-        } else {
-            return (
-                <div>
-                    <a onClick={this.signIn}> click to sign in</a>
-                </div>
-            );
-        }
-    }
-}
-
-export default withActions(Login);
+export default withData(withActions(Login))
