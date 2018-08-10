@@ -1,62 +1,40 @@
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
-import FormControl from '@material-ui/core/FormControl'
-import Select from '@material-ui/core/Select'
-import InputLabel from '@material-ui/core/InputLabel'
-import { withStyles } from '@material-ui/core/styles'
 import Switch from '@material-ui/core/Switch'
-import moment from 'moment'
 import SelectWeek from './select-week'
 import SelectTeam from './select-team'
 import SelectTag from './select-tag'
+import Grid from '@material-ui/core/Grid'
 import { withActions, withData } from '../context/ppp'
-
-const styles = {
-  title: {
-    flex: 3
-  },
-  formControl: {
-    flex: 3,
-    margin: '2px',
-    minWidth: 120
-  },
-  add: {
-    flex: 1,
-    textAlign: 'right'
-  }
-}
-
-
-
 
 let Top = props => (
   <AppBar position="static" color="default">
     <Toolbar>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          width: '100%'
-        }}
-      >
-        <Typography variant="title" className={props.classes.title}>
-          willhaben ppps
-        </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={4}>
+          <Typography variant="title">
+            willhaben ppps
+          </Typography>
+        </Grid>
 
+        <Grid item xs={2}>
+          <SelectWeek weeks={props.weeks}/>
+        </Grid>
+        <Grid item xs={2}>
+          <SelectTeam teams={props.teams }/>
+        </Grid>
+        <Grid item xs={2}>
+          <SelectTag tags={props.tags}/>
 
-        <SelectWeek weeks = {props.weeks}/>
-
-        <SelectTeam teams = {props.teams }/>
-
-        <SelectTag tags={props.tags}/>
-
-        <Switch checked={props.data.editMode} disabled={props.data.teamSelected !== undefined}
-                onChange={props.actions.toggleEdit}/>
-      </div>
+        </Grid>
+        <Grid item xs={1}>
+          <Switch checked={props.data.editMode} disabled={props.data.teamSelected !== undefined}
+                  onChange={props.actions.toggleEdit}/>
+        </Grid>
+      </Grid>
     </Toolbar>
   </AppBar>
 )
 
-export default withData(withActions(withStyles(styles)(Top)))
+export default withData(withActions(Top))
