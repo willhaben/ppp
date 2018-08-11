@@ -11,7 +11,7 @@ class Main extends React.Component {
     super(props)
   }
 
-  TEAMS = ['omg', 'kitt', 'jobs', 'safe', 'qa', 'ops', 'mad', 'org', 'god', 'asap']
+  TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap']
 
   getTeams = () => {
     return Object.keys(this.props.data.selectedItems).map((key) => {
