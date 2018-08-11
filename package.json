@@ -11,6 +11,7 @@
     "start": "next start",
     "predeploy": "npm run export",
     "deploy": "firebase deploy",
+    "deployCI": "firebase deploy --token=$FIREBASE_TOKEN",
     "format": "prettier --write ./src/**/*.js"
   },
   "author": "",

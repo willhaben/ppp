@@ -4,7 +4,7 @@ script: npm run build
 deploy:
   skip_cleanup: true
   provider: script
-  script: npm run deploy
+  script: npm run deployCI
 env:
   global:
     secure: Hp3NOKZAtb3P0auFseM40VaFRaVMxhxtCd7ZWZ5FlvRNP1uzxA1EC448aY7Q/wm9tAfw/T49tzKQ1o8zllDCE6Ej1RvD0PYokFfMlY6adNgZHNaCG42MO/TR2eGORR+pPT0s8/B6cVZ2x2Moh4okzPHFBsg9YS6a++hmN9jHeKu4HDNeBfaXMtlZ+mvmF96dj8Y252x5Id2xzZrsL5OmzNF14vTWGCTql2+w3Y6eRqPgZGpzZoe6austp55vTsMoLwFwn3ikH+duXj9XaMqWB0X5LW3Sykh0ownmiPPsiSPVu+2mYZbQ3i4sYAYztR/VwIWdBCB2XXxeVvWiuy4w0DpvtRMQR0eoLJmZOJ/fL3cgbMhDTb9VTqwFl31H5YU+VJn8po7dQ5AoJboeK3v2OHE0+O+oJd3ZoG8Zv3ClL/ME31R5RMUiyOny4iAhKkZK9v87S3HngtYokIwTl9lJz8vHp+bu74NyC7SKx1+qSDak4DDBHBNpLYpt4uxOzM9et1XafhgS8+tJOnNEsY4uBAICtdbPf7Eu3iJcKeqUMlt0YNkMG73gvhL4R7G5OUPa/fLpQKcJr4DWCpw46VK6BYDrPpLkHZ7fSakvN5inklW5GE0IhmuEhLMAvVBxfl4Y+Rh5ifHBWTnJvTjc79gL4IDt7EEwbjHUyY5uJ2cIL8w=
