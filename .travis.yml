@@ -1,9 +1,6 @@
 language: node_js
 node_js: lts/*
 script: npm run build
-before_deploy:
-- npm run export
-- npm i -g firebase-tools
 deploy:
   skip_cleanup: true
   provider: firebase
