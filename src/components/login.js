@@ -10,7 +10,7 @@ let Login = props =>
     <Grid item xs={6}>
       <Paper style={{padding: 20}}>
         <Grid container spacing={16}>
-          <Grid item>
+          <Grid item xs={12}>
             <Typography variant="headline">
               Log in to continue
             </Typography>
