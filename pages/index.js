@@ -5,13 +5,29 @@ import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from '../src/context
 import Login from '../src/components/login'
 import NoSsr from '@material-ui/core/NoSsr'
 
+let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap']
+
+let App = onlyLoggedIn(props => <React.Fragment>
+    <Top weeks={props.weeks} teams={TEAMS} tags={['#sch']}/>
+    <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'top',
+        width: '100%',
+        flexWrap: 'wrap'
+    }}>
+        <Group heading="Progress" type='progress' items={props.progress}/>
+        <Group heading="Plans" type='plans' items={props.plans}/>
+        <Group heading="Problems" type='problems' items={props.problems}/>
+        <Group heading="Deadlines" type='deadlines' items={props.deadlines}/>
+    </div>
+</React.Fragment>)
+
 class Main extends React.Component {
 
   constructor (props) {
     super(props)
   }
-
-  TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap']
 
   getTeams = () => {
     return Object.keys(this.props.data.selectedItems).map((key) => {
@@ -49,22 +65,6 @@ class Main extends React.Component {
 
     let ShowLogin = onlyLoggedOut(Login)
 
-    let App = onlyLoggedIn(props => <React.Fragment>
-      <Top weeks={props.data.weeks} teams={this.TEAMS} tags={['#sch']}/>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'top',
-        width: '100%',
-        flexWrap: 'wrap'
-      }}>
-        <Group heading="Progress" type='progress' items={this.getItems('progress')}/>
-        <Group heading="Plans" type='plans' items={this.getItems('plans')}/>
-        <Group heading="Problems" type='problems' items={this.getItems('problems')}/>
-        <Group heading="Deadlines" type='deadlines' items={this.getItems('deadlines')}/>
-      </div>
-    </React.Fragment>)
-
     return <div>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -72,8 +72,7 @@ class Main extends React.Component {
       </Head>
       <NoSsr key="no-ssr">
         <ShowLogin/>
-        <App/>
-
+        <App weeks={this.props.data.weeks} plans={this.getItems('plans')} problems={this.getItems('problems')} deadlines={this.getItems('deadlines')}  progress={this.getItems('progress')}/>
       </NoSsr>
     </div>
 
