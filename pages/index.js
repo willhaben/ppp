@@ -5,7 +5,7 @@ import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from '../src/context
 import Login from '../src/components/login'
 import NoSsr from '@material-ui/core/NoSsr'
 
-let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap']
+let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap', 'web']
 
 let App = onlyLoggedIn(props => <React.Fragment>
     <Top weeks={props.weeks} teams={TEAMS} tags={['#sch']}/>
