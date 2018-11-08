@@ -3,12 +3,14 @@ import Head from 'next/head'
 import Group from '../src/components/group'
 import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from '../src/context/ppp'
 import Login from '../src/components/login'
+import Hint from '../src/components/hint'
 import NoSsr from '@material-ui/core/NoSsr'
 
 let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap', 'web']
 
 let App = onlyLoggedIn(props => <React.Fragment>
     <Top weeks={props.weeks} teams={TEAMS} tags={['#sch']}/>
+    <Hint/>
     <div style={{
         display: 'flex',
         justifyContent: 'space-between',
