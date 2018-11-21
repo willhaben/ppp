@@ -6,7 +6,7 @@ import Login from '../src/components/login'
 import Hint from '../src/components/hint'
 import NoSsr from '@material-ui/core/NoSsr'
 
-let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap', 'web']
+let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap', 'web', 'tech-fit']
 
 let App = onlyLoggedIn(props => <React.Fragment>
     <Top weeks={props.weeks} teams={TEAMS} tags={['#sch']}/>
