@@ -6,6 +6,7 @@ import Select from "@material-ui/core/Select";
 import InputLabel from "@material-ui/core/InputLabel";
 import { withStyles } from "@material-ui/core/styles";
 import Switch from '@material-ui/core/Switch';
+import {Button} from '@wh/wh-components'
 import moment from "moment";
 import { withActions, withData } from "../context/ppp";
 let _currentWeek = moment().format('YYYY-ww')
@@ -13,7 +14,9 @@ let _currentWeek = moment().format('YYYY-ww')
 let _hasCurrentWeek = weeks => {
   return weeks.find(w => w === _currentWeek) != null
 }
-let select = props => <FormControl>
+let select = props => <div>
+  <Button text='test'/>
+  <FormControl>
   <InputLabel htmlFor="week-select">Week</InputLabel>
   <Select
     value={props.data.selectedWeek}
@@ -33,5 +36,6 @@ let select = props => <FormControl>
     ))}
   </Select>
 </FormControl>
+</div>
 
 export default withActions(withData(select))
