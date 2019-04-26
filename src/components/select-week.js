@@ -26,8 +26,8 @@ let select = props => <div>
     {!_hasCurrentWeek(props.weeks) && (
       <option key={_currentWeek} value={_currentWeek}>
         {moment().format("ww/YYYY")}
-        {moment(w, "yyyy-ww").add(1,'d').format(" (D.M. - ")}
-        {moment(w, "yyyy-ww").add(5,'d').format("D.M.)")}
+        {moment().add(1,'d').format(" (D.M. - ")}
+        {moment().add(5,'d').format("D.M.)")}
       </option>
     )}
     {props.weeks.map(w => (
