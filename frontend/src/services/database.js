@@ -1,6 +1,7 @@
 import firebase from "./config";
 
 export function saveItem(week, key, item) {
+  console.log("saveItem", week, key,item)
   return firebase
     .database()
     .ref("/weeks/" + week + "/" + key)
@@ -8,6 +9,7 @@ export function saveItem(week, key, item) {
 }
 
 export function deleteItem(week, key) {
+  console.log("deleteItem", week, key)
   return firebase.database().ref("/weeks/" + week + "/" + key).remove()
 }
 
@@ -24,10 +26,12 @@ export function getWeekList() {
       });
       weeks = weeks.sort().reverse();
       return Promise.resolve(weeks);
+      console.log("getWeekList", weeks);
     });
 }
 
 export function getWeek(week) {
+
   return new Promise(function(resolve, reject) {
     firebase
       .database()
@@ -39,6 +43,7 @@ export function getWeek(week) {
           items[child.key] = child.val();
         });
         resolve(items);
+        console.log("getWeek", week, items);
       })
       .catch(e => reject(e));
   });
