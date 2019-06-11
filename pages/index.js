@@ -5,6 +5,7 @@ import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from '../src/context
 import Login from '../src/components/login'
 import Hint from '../src/components/hint'
 import NoSsr from '@material-ui/core/NoSsr'
+//import '@wh/wh-components/lib/index.css'
 
 let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'ops', 'apps', 'org', 'god', 'asap', 'web', '3m']
 
