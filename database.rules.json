@@ -1,6 +1,6 @@
 {
   "rules": {
-    ".read": "auth.token.email_verified == true && auth.token.email.matches(/.*@schibsted.com$/)",
-    ".write": "auth.token.email_verified == true && auth.token.email.matches(/.*@schibsted.com$/)"
+    ".read": "auth.token.email_verified == true && auth.token.email.matches(/.*@adevinta.com$/)",
+    ".write": "auth.token.email_verified == true && auth.token.email.matches(/.*@adevinta.com$/)"
   }
 }

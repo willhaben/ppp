@@ -5,7 +5,7 @@ const provider = new firebase.auth.GoogleAuthProvider()
 export function onLogin (cb, fail) {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      if (user.email.includes('@schibsted.com')) {
+      if (user.email.includes('@adevinta.com')) {
         cb(user)
       } else {
         fail()
