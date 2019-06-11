@@ -7,3 +7,6 @@ gradle-wrapper.jar
 
 # Ignore Gradle build output directory
 build
+
+**/node_modules/
+**/.next/
