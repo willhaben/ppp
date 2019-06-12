@@ -15,7 +15,7 @@ let Login = props =>
               Log in to continue
             </Typography>
             <Typography variant="body1">
-              you need a adevinta.com gmail account.
+              you need an adevinta.com gmail account.
             </Typography>
           </Grid>
           <Grid item>
