@@ -7,7 +7,7 @@ import Hint from '../src/components/hint'
 import NoSsr from '@material-ui/core/NoSsr'
 //import '@wh/wh-components/lib/index.css'
 
-let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'plattform', 'apps', 'org', 'god', 'asap', 'web', '3m']
+let TEAMS = ['omg', 'kitt', 'jobs', 'serenity', 'qa', 'platform', 'apps', 'org', 'god', 'asap', 'web', '3m']
 
 let App = onlyLoggedIn(props => <React.Fragment>
     <Top weeks={props.weeks} teams={TEAMS} tags={['#sch']}/>
