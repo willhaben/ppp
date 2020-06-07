@@ -11,5 +11,3 @@ Progress, plans, problems (PPP) is a management technique for recurring (daily, 
 Each report consists of three sections: *Progress*. Employee's accomplishments, finished items and closed tasks for the period ending. *Plans*. Goals and objectives for the next reporting period. *Problems*. Items that are stuck and can’t be finished. Problems often need help from someone else, not just the employee.
 ____
 
-
-image:https://travis-ci.org/willhaben/ppp.svg?branch=master["Build Status", link="https://travis-ci.org/willhaben/ppp"]
