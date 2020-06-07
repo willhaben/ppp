@@ -2,6 +2,7 @@ import Top from './components/top'
 import Group from './components/group'
 import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from './context/ppp'
 import Login from './components/login'
+import Hint from './components/hint'
 import NoSsr from '@material-ui/core/NoSsr'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -11,7 +12,7 @@ let TEAMS = ['search', 'adin', 'jobs', 'serenity', 'platform sre', 'apps', 'org'
 
 let App = onlyLoggedIn(props => <React.Fragment>
     <Top weeks={props.weeks} teams={TEAMS} tags={['#sch']}/>
-    <wh-ppp-hint/>
+    <Hint/>
     <div style={{
         display: 'flex',
         justifyContent: 'space-between',
