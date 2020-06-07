@@ -32,7 +32,6 @@ let select = props => <div>
       </option>
     )}
     {props.weeks.map(w => {
-      console.log(moment(w, "YYYY-ww").format())
       return (
       <option key={w} value={w}>
         {moment(w, "YYYY-ww").format("ww/YYYY")}
