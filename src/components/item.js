@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import {debounce} from 'underscore'
 import {withActions, withData} from '../context/ppp';
+import React from 'react'
 
 export class Item extends React.Component {
     constructor(props) {

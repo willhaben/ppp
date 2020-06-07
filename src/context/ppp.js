@@ -1,7 +1,7 @@
 const uuidv1 = require('uuid/v1')
 import * as Database from '../services/database'
 import * as Auth from '../services/auth'
-
+import React from 'react'
 import moment from 'moment'
 
 const Actions = React.createContext({})

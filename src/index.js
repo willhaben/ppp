@@ -1,10 +1,11 @@
-import Top from '../src/components/top'
-import Head from 'next/head'
-import Group from '../src/components/group'
-import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from '../src/context/ppp'
-import Login from '../src/components/login'
-import Hint from '../src/components/hint'
+import Top from './components/top'
+import Group from './components/group'
+import { withStore, withData, onlyLoggedIn , onlyLoggedOut} from './context/ppp'
+import Login from './components/login'
+import Hint from './components/hint'
 import NoSsr from '@material-ui/core/NoSsr'
+import React from 'react'
+import ReactDOM from 'react-dom'
 //import '@wh/wh-components/lib/index.css'
 
 let TEAMS = ['search', 'adin', 'jobs', 'serenity', 'platform sre', 'apps', 'org', 'dt', 'transactions', 'bbx', '3m', 'taas']
@@ -69,10 +70,6 @@ class Main extends React.Component {
     let ShowLogin = onlyLoggedOut(Login)
 
     return <div>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta charSet="utf-8"/>
-      </Head>
       <NoSsr key="no-ssr">
         <ShowLogin/>
         <App weeks={this.props.data.weeks} plans={this.getItems('plans')} problems={this.getItems('problems')} deadlines={this.getItems('deadlines')}  progress={this.getItems('progress')}/>
@@ -83,4 +80,7 @@ class Main extends React.Component {
 
 }
 
-export default withStore(withData(Main))
+let AppMain = withStore(withData(Main));
+export default AppMain
+const domContainer = document.querySelector('#container');
+ReactDOM.render(<AppMain/>, domContainer);
