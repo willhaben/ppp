@@ -6,7 +6,8 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.js",
-    "deploy": "firebase deploy"
+    "deploy": "firebase deploy",
+    "deployci": "firebase deploy  --token \"$FIREBASE_TOKEN\""
   },
   "author": "",
   "license": "ISC",
