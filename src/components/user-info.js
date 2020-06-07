@@ -1,3 +1,4 @@
+import React from 'react'
 import Chip from '@material-ui/core/Chip'
 import FaceIcon from '@material-ui/icons/Face'
 import Avatar from '@material-ui/core/Avatar'
