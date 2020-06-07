@@ -43,10 +43,12 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: wh-ppp
+          path: dist
       - uses: actions/setup-node@v1
         with:
           node-version: 10.x
       - run: npm i -g firebase-tools
+      - run: find .
       - shell: bash
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
