@@ -36,10 +36,9 @@ jobs:
       - uses: actions/download-artifact@v1
         with:
           name: wh-ppp
-      - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
       - run: npm i -g firebase-tools
       - shell: bash
         env:
