@@ -1,11 +1,17 @@
 import React from 'react'
-import Chip from '@material-ui/core/Chip'
-import FaceIcon from '@material-ui/icons/Face'
-import Avatar from '@material-ui/core/Avatar'
 import { withActions, withData } from '../context/ppp'
+import styled from 'styled-components'
 
 
+let User = props => <div className={props.className} onClick={props.actions.logout}>{props.data.user.email}</div>
 
-let user = props => <Chip color="secondary" onClick={props.actions.logout} avatar={<Avatar><FaceIcon /></Avatar>} label={props.data.user.email}/>
+let StyledUser = styled(User)`
+background-color: rgb(241, 99, 115);
+color: white;
+font-size: 14px;
+padding: 5px 10px;
+border-radius: 10px;
+`
 
-export default withActions(withData(user))
+
+export default withActions(withData(StyledUser))
