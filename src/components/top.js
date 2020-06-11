@@ -8,39 +8,26 @@ import SelectTeam from './select-team'
 import SelectTag from './select-tag'
 import UserInfo from './user-info'
 import Grid from '@material-ui/core/Grid'
-import { withActions, withData } from '../context/ppp'
+import {withActions, withData} from '../context/ppp'
 
 let Top = props => (
-  <AppBar position="static" color="default">
-    <Toolbar>
-      <Grid container spacing={8}>
-        <Grid item xs={5}>
-          <Typography variant="title">
-            willhaben ppps
-          </Typography>
-          <UserInfo/>
-        </Grid>
+    <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr 0.5fr', columnGap: '5px', alignItems: 'center'}}>
+        <div>
+            <UserInfo/>
+        </div>
 
-        <Grid item xs={2}>
-          <SelectWeek weeks={props.weeks}/>
-        </Grid>
-        <Grid item xs={2}>
-          <SelectTeam teams={props.teams }/>
-        </Grid>
-        <Grid item xs={2}>
-          <SelectTag tags={props.tags}/>
+        <div>
+            <SelectWeek weeks={props.weeks}/>
+        </div>
+        <div>
+            <SelectTeam teams={props.teams}/>
+        </div>
+        <div>
+            <SelectTag tags={props.tags}/>
 
-        </Grid>
-        <Grid item xs={1}>
-          <Switch checked={props.data.editMode} disabled={props.data.teamSelected !== undefined}
-                  onChange={props.actions.toggleEdit}/>
+        </div>
 
-        </Grid>
-
-
-      </Grid>
-    </Toolbar>
-  </AppBar>
+    </div>
 )
 
 export default withData(withActions(Top))

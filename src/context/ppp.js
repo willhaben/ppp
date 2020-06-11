@@ -83,7 +83,7 @@ class State extends React.Component {
   }
 
   selectTeam = team => {
-    let editMode = team === undefined ? false : this.state.editMode
+    let editMode = team === undefined ? false : true
     this.setState({selectedTeam: team, editMode: editMode})
   }
 
