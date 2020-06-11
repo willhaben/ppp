@@ -1,33 +1,32 @@
 import React from 'react'
-import AppBar from '@material-ui/core/AppBar'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
-import Switch from '@material-ui/core/Switch'
+import styled from 'styled-components'
 import SelectWeek from './select-week'
 import SelectTeam from './select-team'
 import SelectTag from './select-tag'
 import UserInfo from './user-info'
-import Grid from '@material-ui/core/Grid'
 import {withActions, withData} from '../context/ppp'
 
-let Top = props => (
-    <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr 0.5fr', columnGap: '5px', alignItems: 'center'}}>
-        <div>
-            <UserInfo/>
-        </div>
+let Grid = styled.div`
+    display: grid;
 
-        <div>
+    grid-template-columns:  1fr 3fr 1fr 0.6fr 0.6fr;
+      @media (max-width: 1000px) {
+        grid-template-columns: 1fr 0fr 2fr 1fr 1fr;
+    }
+    column-gap: 5px;
+    align-items: center
+`
+
+let Top = props => (
+    <Grid>
+
+        <UserInfo/>
+        <div></div>
             <SelectWeek weeks={props.weeks}/>
-        </div>
-        <div>
             <SelectTeam teams={props.teams}/>
-        </div>
-        <div>
             <SelectTag tags={props.tags}/>
 
-        </div>
-
-    </div>
+    </Grid>
 )
 
 export default withData(withActions(Top))
