@@ -1,17 +1,13 @@
 import React from 'react'
-import { withActions, withData } from '../context/ppp'
+import {withActions, withData} from '../context/ppp'
 import styled from 'styled-components'
+import Profile from '@wh-components/icons/Profile'
+import {Badge} from '@wh-components/core/Badge/Badge'
 
 
-let User = props => <div className={props.className} onClick={props.actions.logout}>{props.data.user.email}</div>
+let User = props => <div  onClick={props.actions.logout}>
+    <Badge Icon={Profile} marginRight="s">
+        {props.data.user.email}
+    </Badge></div>
 
-let StyledUser = styled(User)`
-background-color: rgb(241, 99, 115);
-color: white;
-font-size: 14px;
-padding: 5px 10px;
-border-radius: 10px;
-`
-
-
-export default withActions(withData(StyledUser))
+export default withActions(withData(User))
