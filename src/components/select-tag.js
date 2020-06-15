@@ -11,7 +11,7 @@ let select = props => {
         return {label: p, value: p}
     });
 
-    items.push({label: "all", value: -1})
+    items.unshift({label: "all", value: -1})
     return <Select
         onChange={e =>
             props.actions.selectTag(

@@ -26,7 +26,7 @@ let select = props => {
     });
 
     if (!_hasCurrentWeek(props.weeks)){
-        items.push({label: generateLabel(_currentWeek), value: _currentWeek})
+        items.unshift({label: generateLabel(_currentWeek), value: _currentWeek})
     }
 
     return <div>
