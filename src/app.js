@@ -8,7 +8,7 @@ import {theme} from '@wh-components/core/theme'
 import {GlobalStyle} from '@wh-components/core/GlobalStyle'
 import {ExternalStyle} from '@wh-components/core/ExternalStyle'
 
-let TEAMS = ['search', 'adin', 'jobs', 'serenity', 'platform sre', 'apps', 'org', 'dt', 'transactions', 'fe', '3m', 'taas']
+let TEAMS = ['search', 'odin', 'jobs', 'serenity', 'platform sre', 'apps', 'org', 'dt', 'transactions', 'fe', '3m', 'taas']
 
 let App = onlyLoggedIn(props => <React.Fragment>
     <GlobalStyle/>
